@@ -1,6 +1,6 @@
 ---
 title: "Class Reference"
-author: "Derek Willis"
+author: "Student name"
 output:
   html_document:
     theme: cerulean
@@ -16,9 +16,13 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r}
-print("Hello!")
+print("hello!")
 ```
 
+
+```{r}
+print("yasss!")
+```
 
 
 ## Introduction
@@ -30,7 +34,7 @@ Consider this a personal guide to the commands and functions you will learn. In 
 The command to set a working directory is setwd(). For example:
 
 ```{r}
-setwd("~/code/data_journalism_2023_spring")
+setwd("~/Documents/GitHub/data_journalism_2023_spring")
 ```
 
 ### How to install and load the tidyverse
@@ -39,20 +43,10 @@ setwd("~/code/data_journalism_2023_spring")
 install.packages("tidyverse")
 library(tidyverse)
 ```
-
-### How to read a CSV file
-
-The function to use here is called `read_csv` and we pass it either a file path or a URL.
+### how to read a csv file
+the function to use here is called 'read_csv'and we pass it either a file or a url
 
 ```{r}
 wes_moore_contributions <- read_csv("https://raw.githubusercontent.com/stephenneukam/CNS_Annapolis/main/Campaign_finance/Moore_ContributionsList.csv")
 ```
-
-
-
-
-
-
-
-
 
