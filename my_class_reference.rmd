@@ -56,7 +56,11 @@ group_by(term)
   summarise(
     count_classes = n())
   ```
-  
+Filters: 
+== exact matching
+!= does not match
+> or >=
+< or <=
   
   
   
