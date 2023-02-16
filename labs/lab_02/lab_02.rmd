@@ -1,0 +1,109 @@
+---
+title: "lab_02"
+author: "derek willis"
+date: "2023-01-07"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Load libraries and establish settings
+
+```{r}
+# Turn off scientific notation
+options(scipen=999)
+
+# Load the tidyverse. If you have not installed the tidyverse already, remove the # from the next line and run it first.  
+# install.packages('tidyverse')
+library(tidyverse)
+library(lubridate)
+```
+
+## Load Data
+
+Let's keep working with the UMD courses and Maryland campaign expense data we used in the pre_lab.
+
+```{r}
+umd_courses <- read_rds("data/umd_courses.rds")
+maryland_expenses <- read_csv("data/maryland_expenses.csv")
+```
+
+## Answer questions
+
+**Q1** Create a new column that divides the expense amounts into the following categories - \$0-\$500, \$500-\$5000, \$5001-\$50000, \$50001\_\$100000, \$100001-\$500000 - giving each an appropriate text value, and count how many expenses are in each group. How would you describe the distribution of expenses in a sentence? Would you change the categories?
+
+**A1.** the distribution is really uneven. Many people/organizations paid in the mid-range which is a significant amount of money. I think I would want to know the range in which individuals are paying vs organizations. 
+
+```{r}
+maryland_expenses_date_with_ranges %>%  
+  mutate(
+  range = case_when(
+    (amount >= 0 & amount <= 500) ~ "range 1",
+    (amount >= 501 & amount <= 5000) ~ "range 2",
+    (amount >= 5001 & amount <= 50000) ~ "range 3",
+    (amount >= 50001 & amount <= 100000) ~ "range 4",
+    (amount >= 100001 & amount <= 500000) ~ "range 5",
+      TRUE ~ as.character(NA)  )
+      ) %>%
+  group_by(range) %>%
+  summarize(total = sum(amount))
+```
+
+```{r}
+maryland_expenses_date %>%
+  group_by(range) %>%
+  summarize(total = sum(amount))
+```
+
+
+```{r}
+
+ 
+```
+
+
+**Q2.** How many departments have offered the courses with "Climate" in the title and at least one seat? Which department has offered the most? 
+**A2.** 26 department, the Atmospheric and oceanic science department offered the most
+
+```{r}
+umd_courses %>% filter(str_detect(title, "Climate"))  %>% 
+  filter(seats >= 1)  %>%  group_by(department) %>% summarise(
+    count_classes = n(), total_seats = sum(seats),) %>% arrange(desc(total_seats))
+ 
+```
+
+**Q3.** Of the departments listed in A2, which one is the most interesting to you, and why?
+**A3.** Germanic studies, because I wouldn't think the germanic language language had anything to do with climate.
+
+**Q4.** Using the Maryland campaign expenses data, change the datatype of the expenditure_date column so that it is a date and not a chr. Then create a new column for the month based on expenditure_date. Then write code that shows total amount spent each month by Wes Moore's committee (you'll need to search the data to find the exact name). Write a sentence describing the pattern of spending over time.
+**A4.**   Moore's committee spent the most money toward the very end of his campaign, closer to the election
+
+```{r}
+maryland_expenses_date <- maryland_expenses %>% mutate(new_expenditure_date=mdy(expenditure_date))
+```
+```{r}
+
+```
+
+
+```{r}
+maryland_expenses_date %>%
+  mutate(month = floor_date(new_expenditure_date, "month")) %>%
+  group_by(month, committee_name) %>%  
+  filter(committee_name == "Moore  Wes For Maryland") %>% 
+  summarise(total_amount = sum(amount)) %>%
+ arrange(desc(total_amount))
+```
+
+**Q5.** Choose your own adventure: using either the UMD courses or campaign expenses data, ask and answer a question that is different than the previous ones. You can use one of the ones you provided in the pre_lab.
+**A5.** How many Departments offer courses discussing racism, colonization and discrimination with at least one seat? Anything note-worthy? Nine departments, 
+
+```{r}
+umd_courses %>% filter(str_detect(title, "Racism")  |
+                       str_detect(title, "Colonization") |
+                      str_detect(title, "Discrimination"))  %>% 
+  filter(seats >= 1)  %>%  group_by(department) %>% summarise(
+    count_classes = n(), total_seats = sum(seats),) %>% arrange(desc(total_seats))
+```
