@@ -1,6 +1,7 @@
 Grantor,Grantee,grantee_clean,Zip Code,Fiscal Year,Amount,Description,Category,Fiscal Period,Date
 Commerce/Maryland Tourism Board,PRINCE GEORGES COUNTY CVB,PRINCE GEORGES COUNTY CVB,20772,2017,128041,Maryland Tourism Board Grant,Grant,1,06/30/2017 12:00:00 AM
 Department of Health & Mental Hygiene/Prevention and Disease Control,Associated Black Charities,Associated Black Charities,21201,2010,93427,Minority Outreach,Grant,1,06/30/2010 12:00:00 AM
+Maryland Department of Education/EARLY CHILDHOOD EDUCATION,WESTED/PUBLICATIONS,WESTED/PUBLICATIONS,94107-1242,2014,1614541,GRANTS FOR STATE ASSESSMENTS,Grant,1,06/30/2014 12:00:00 AM
 Department of Health & Mental Hygiene/Family Health Services & Primary Care,Maryland Patient Safety Center,Maryland Patient Safety Center,21075,2010,213800,Babies Born Healthy,Grant,1,06/30/2010 12:00:00 AM
 Department of Natural Resources/Chesapeake & Atlantic Coastal Bays Trust Fund,Anacostia Watershed Society,Anacostia Watershed Society,20710,2017,174318,"Payments made for the implementation of nonpoint source pollution reduction best management practices, including stormwater management, stream restoration, wetland creation, and tree planting activities.",Grant,1,06/30/2017 12:00:00 AM
 Department of Business and Economic Development/Maryland State Arts Council,Washington County Museum of Fine Arts,WASHINGTON COUNTY MUSEUM OF FINE ARTS,21740,2009,55913,grant funding for the support of the County Arts Councils,Grant,1,06/30/2009 12:00:00 AM
