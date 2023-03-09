@@ -1767,11 +1767,35 @@ the chunk or by placing your cursor inside it and pressing
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShrbml0cilcbmxpYnJhcnkodGlkeXZlcnNlKVxubGlicmFyeShqYW5pdG9yKVxubGlicmFyeShkcGx5cilcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShrbml0cilcbmxpYnJhcnkodGlkeXZlcnNlKVxuYGBgIn0= -->
 <pre class="r"><code>library(knitr)
-library(tidyverse)
-library(janitor)
-library(dplyr)</code></pre>
+library(tidyverse)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUmVnaXN0ZXJlZCBTMyBtZXRob2RzIG92ZXJ3cml0dGVuIGJ5ICdkYnBseXInOlxuICBtZXRob2QgICAgICAgICBmcm9tXG4gIHByaW50LnRibF9sYXp5ICAgICBcbiAgcHJpbnQudGJsX3NxbCAgICAgIFxu4pSA4pSAIEF0dGFjaGluZyBwYWNrYWdlcyDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAgdGlkeXZlcnNlIDEuMy4yIOKUgOKUgOKclCBnZ3Bsb3QyIDMuNC4wICAgICDinJQgcHVycnIgICAxLjAuMVxu4pyUIHRpYmJsZSAgMy4xLjggICAgIOKclCBkcGx5ciAgIDEuMS4wXG7inJQgdGlkeXIgICAxLjMuMCAgICAg4pyUIHN0cmluZ3IgMS41LjBcbuKclCByZWFkciAgIDIuMS4zICAgICDinJQgZm9yY2F0cyAxLjAuMOKUgOKUgCBDb25mbGljdHMg4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAIHRpZHl2ZXJzZV9jb25mbGljdHMoKSDilIDilIBcbuKcliBkcGx5cjo6ZmlsdGVyKCkgbWFza3Mgc3RhdHM6OmZpbHRlcigpXG7inJYgZHBseXI6OmxhZygpICAgIG1hc2tzIHN0YXRzOjpsYWcoKVxuIn0= -->
+<pre><code>Registered S3 methods overwritten by &#39;dbplyr&#39;:
+  method         from
+  print.tbl_lazy     
+  print.tbl_sql      
+── Attaching packages ─────────────────────────────────────────────────────────────── tidyverse 1.3.2 ──✔ ggplot2 3.4.0     ✔ purrr   1.0.1
+✔ tibble  3.1.8     ✔ dplyr   1.1.0
+✔ tidyr   1.3.0     ✔ stringr 1.5.0
+✔ readr   2.1.3     ✔ forcats 1.0.0── Conflicts ────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShqYW5pdG9yKVxuYGBgIn0= -->
+<pre class="r"><code>library(janitor)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYamFuaXRvcuKAmVxuXG5UaGUgZm9sbG93aW5nIG9iamVjdHMgYXJlIG1hc2tlZCBmcm9tIOKAmHBhY2thZ2U6c3RhdHPigJk6XG5cbiAgICBjaGlzcS50ZXN0LCBmaXNoZXIudGVzdFxuIn0= -->
+<pre><code>
+Attaching package: ‘janitor’
+
+The following objects are masked from ‘package:stats’:
+
+    chisq.test, fisher.test</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShkcGx5cilcbmBgYCJ9 -->
+<pre class="r"><code>library(dplyr)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1789,6 +1813,14 @@ run in the editor is displayed.</p>
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3BvcnRzX3BvbGl0aWNhbF9kb25hdGlvbnMgPC0gcmVhZF9jc3YoXCJkYXRhL3Nwb3J0c19wb2xpdGljYWxfZG9uYXRpb25zXy5jc3ZcIilcbmBgYCJ9 -->
 <pre class="r"><code>sports_political_donations &lt;- read_csv(&quot;data/sports_political_donations_.csv&quot;)</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUm93czogMjc5OCBDb2x1bW5zOiA34pSA4pSAIENvbHVtbiBzcGVjaWZpY2F0aW9uIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgFxuRGVsaW1pdGVyOiBcIixcIlxuY2hyICg2KTogT3duZXIsIFRlYW0sIExlYWd1ZSwgUmVjaXBpZW50LCBBbW91bnQsIFBhcnR5XG5kYmwgKDEpOiBFbGVjdGlvbiBZZWFyXG7ihLkgVXNlIGBzcGVjKClgIHRvIHJldHJpZXZlIHRoZSBmdWxsIGNvbHVtbiBzcGVjaWZpY2F0aW9uIGZvciB0aGlzIGRhdGEuXG7ihLkgU3BlY2lmeSB0aGUgY29sdW1uIHR5cGVzIG9yIHNldCBgc2hvd19jb2xfdHlwZXMgPSBGQUxTRWAgdG8gcXVpZXQgdGhpcyBtZXNzYWdlLlxuIn0= -->
+<pre><code>Rows: 2798 Columns: 7── Column specification ────────────────────────────────────────────────────────────────────────────────
+Delimiter: &quot;,&quot;
+chr (6): Owner, Team, League, Recipient, Amount, Party
+dbl (1): Election Year
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
@@ -1800,7 +1832,12 @@ clean_sports_political_donations &lt;- sports_political_donations %&gt;%
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>#Question 1 #P1.removing dollar signs/commas from amount column</p>
+<p>#Question 1:“American professional sports owners have contributed
+nearly $47 million in federal elections since 2015, according to
+research by ESPN in partnership with FiveThirtyEight, including $10
+million to Republican causes and $1.9 million to Democratic causes so
+far in the 2020 election cycle.”</p>
+<p>#P1.removing dollar signs/commas from amount column</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3BvcnRzX3BvbGl0Y2FsMiA8LSBjbGVhbl9zcG9ydHNfcG9saXRpY2FsX2RvbmF0aW9ucyAlPiVcbiBtdXRhdGUoXG4gICAgICAgIGFjcm9zcyguY29scyA9IGMoXCJhbW91bnRcIiksXG4gICAgICAgICAgICAgICAuZm5zID0gcGFyc2VfbnVtYmVyKSlcbmBgYCJ9 -->
@@ -1820,7 +1857,7 @@ $47000000)</p>
   summarise(total = sum(amount)) %&gt;%
 arrange(desc(total))</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6MSwic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyIxIMOXIDEiXX19LCJyZGYiOiJINHNJQUFBQUFBQUFBMTFReXdyQ01CRGNwbzFpd1FmNEhjMUZEMTRGRWMraTREVzJWWXN4S1dtS0hqMzVSWDZmdXFrcGFBTEo3ZzR6dXp0WkwzYVRlQmNEUUFnUklSQlNUSUZ1Tjh0a0JvaGdFVUFFUFJ0dlNCbzNBTURBeHZuajhGeFovaitSU243SksweEd2NkJSaGd1UDJkUHF5bHAySHkrNTQvUEc0N2RNQmEvOGxuSEdEV2NIalhxc1hwNmtxMHBUS0lraVlwZW1uampRSGpDc3BkMGtTOUpUTGMvSjFBNXdac0Z0RjdqN2s5dVI1TzFhVWRlcWs4dGpJZk4yZDhIM3VYREZBQjAzaGxtcEMybGFKNGhXN1B0RERrbVZhSkhHRzd3K3BCREtuYXNCQUFBPSJ9 -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6MSwic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyIxIMOXIDEiXX19LCJyZGYiOiJINHNJQUFBQUFBQUFBMTFReXdyQ01CRGNwbzFpd1FmNEhjMUZCSytDaUdkUjhCcmJxc1dZbERSRmo1NzhJcjlQM2RRVU5JRmtkNGVaM1oyc0Y3dEp2SXNCSUlTSUVBZ3Bwa0MzbTJVeUEwU3dDQ0NDbm8wM0pJMGJBR0JnNC94eGVLNHMvNTlJSmIva0ZTYWpYOUFvdzRYSDdHbDFaUzI3ajVmYzhYbmo4VnVtZ2xkK3l6ampock9EUmoxV0wwL1NWYVVwbEVRUnNVdFRUeHhvRHhqVzBtNlNKZW1wbHVka2FnYzRzK0MyQzl6OXllMUk4bmF0cUd2VnllV3hrSG03dStEN1hMaGlnSTRidzZ6VWhUU3RFMFFyOXYwaGg2Ukt0RWpqRFY0ZmhqS1UvcXNCQUFBPSJ9 -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["total"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"46978697"}],"options":{"columns":{"min":{},"max":[10],"total":[1]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
@@ -1843,7 +1880,7 @@ arrange(desc(total))</code></pre>
 <!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCBoYXMgZ3JvdXBlZCBvdXRwdXQgYnkgJ3BhcnR5Jy4gWW91IGNhbiBvdmVycmlkZSB1c2luZyB0aGUgYC5ncm91cHNgIGFyZ3VtZW50LlxuIn0= -->
 <pre><code>`summarise()` has grouped output by &#39;party&#39;. You can override using the `.groups` argument.</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjEsIm5jb2wiOjMsInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMSDDlyAzIl0sIkdyb3VwcyI6WyJwYXJ0eSBbMV0iXX19LCJyZGYiOiJINHNJQUFBQUFBQUFBMTFReTJyRE1CQmNQOVFTZzlOQTcvMEQreElLT2JZUStnR2hoZHlLb3FpTnFTSVpXU2JOclovUVAraWZKbDI5SU5HQzhjN3NlTHl6cStWNlhxMHJBQ2lnekhNb0NMWkEzbDVmbWdVZ2d5Q0RFaWIyL1kyaWU2Y0VtRjBNcWhYdng0M29HSldJcG5ieTlQY0xvUngrWmcvNWo0Tlhsb1FKT2d5cDNaWWEybjVvdXVlSmZLTFZvWlhJMjA5cWZKem5HU3YxamFLWkQrYkpubXB6REtEbWdqUFRLZmwrNUZSSGhWR0dDbXhPaWQrdDZxMFdIWE43QUpKc25PbUV1QnVsM1dEYnNOMG92NXBIbThxTmZkV2h6eTc2d3YreVBBY3JFcXh1dVB6c0pJOGJDcnJoSW9BcG5zTUZiWHZkU1JQUGgrelEraVNCWVVwRXhtV0QwejlpNjdrNzl3RUFBQT09In0= -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjEsIm5jb2wiOjMsInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMSDDlyAzIl0sIkdyb3VwcyI6WyJwYXJ0eSBbMV0iXX19LCJyZGYiOiJINHNJQUFBQUFBQUFBMTFReTJyRE1CQmNQOVFTZzlOQTcvMEQreElvT2JZUStnR2hoZHlLb3FpTnFTSVpXU2JOclovUVAraWZKbDI5SU5HQzhjN3NlTHl6cStWNlhxMHJBQ2lnekhNb0NMWkEzbDVmbWdVZ2d5Q0RFaWIyL1kyaWU2Y0VtRjBNcWhYdng0M29HSldJcG5ieTlQY0xvUngrWmcvNWo0Tlhsb1FKT2d5cDNaWWEybjVvdXVlSmZLTFZvWlhJMjA5cWZKem5HU3YxamFLWkQrYkpubXB6REtEbWdqUFRLZmwrNUZSSGhWR0dDbXhPaWQrdDZxMFdIWE43QUpKc25PbUV1QnVsM1dEYnNOMG92NXBIbThxTmZkV2h6eTc2d3YreVBBY3JFcXh1dVB6c0pJOGJDcnJoSW9BcG5zTUZiWHZkU1JQUGgrelEraVNCWVVwRXhtV0QwejhFalZ1ZTl3RUFBQT09In0= -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["party"],"name":[1],"type":["chr"],"align":["left"]},{"label":["election_year"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["total"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Republican","2":"2020","3":"10022932"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
@@ -1860,19 +1897,171 @@ filter(party == &quot;Democrat&quot;) %&gt;%
 summarize(total = sum(amount)) %&gt;%
 arrange(desc(total))</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>#Question 2: “MLB owners have donated the most. Specifically partisan
+contributions from owners and commissioners in the NFL, NBA, WNBA, NHL,
+MLB and NASCAR, by party, 2016-20.”</p>
+<p>Part 1. (also the only part). Find whether MLB owners have actually
+donated the most and gather amounts for each league and party so you can
+also see whether NFL, NBA, WNBA, NHL, MLB and NASCAR contributions were
+partisan.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3BvcnRzX3BvbGl0Y2FsMiAlPiVcbmdyb3VwX2J5KHBhcnR5LCBsZWFndWUpICU+JVxuc3VtbWFyaXplKHRvdGFsID0gc3VtKGFtb3VudCkpICU+JVxuYXJyYW5nZShkZXNjKHRvdGFsKSlcbmBgYCJ9 -->
+<pre class="r"><code>sports_politcal2 %&gt;%
+group_by(party, league) %&gt;%
+summarize(total = sum(amount)) %&gt;%
+arrange(desc(total))</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCBoYXMgZ3JvdXBlZCBvdXRwdXQgYnkgJ3BhcnR5Jy4gWW91IGNhbiBvdmVycmlkZSB1c2luZyB0aGUgYC5ncm91cHNgIGFyZ3VtZW50LlxuIn0= -->
 <pre><code>`summarise()` has grouped output by &#39;party&#39;. You can override using the `.groups` argument.</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjEsIm5jb2wiOjMsInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMSDDlyAzIl0sIkdyb3VwcyI6WyJwYXJ0eSBbMV0iXX19LCJyZGYiOiJINHNJQUFBQUFBQUFBMTFReTBvRE1SUzk4NGkyQTFNTGZzZk1SaWhkdUZBb2ZvQW9kQ2N4VGV2UU5Ca3lLZHFkbitEV2hmaW5yVGN2cUxtUXlUMG5KMmZ1eWVOaWVWTXRLd0Fvb014ektBaTJRSjZmSHBvNUlJTWdneExHZHY5QTBiVlRBa3pQRGtZTHZsTk1VNFA5eFBKM3YxOFF5dUg3Mis4ZkQvOFpFaWJvTUNSbTFZb2EycTQxM2ZGRVB0YnF2WlhJMnlzMXJ2d1RQeWVzMURlS3BqNldKM3VxelNHQW1ndk9US2ZreTRGVEhSVkdHU3F3T1NaK2w2cTNXblRNYlh5U1RKenBoTGphU3p2QnFtRnZlN2x0WmphVk8vWlZoejQ3Nnd2L3kvSVVyRWl3dXVCeTAwa2VKeFQwbFlzQUp2Z2NMbWpiNjA2YStIeklEcTFQRWhpbVJHUmNOamorQVdUako1TDFBUUFBIn0= -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjU3LCJuY29sIjozLCJzdW1tYXJ5Ijp7IkEgdGliYmxlIjpbIjU3IMOXIDMiXSwiR3JvdXBzIjpbInBhcnR5IFs3XSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE3V1dUV2pUWUJpQXZ6V3RyaWtkRmZFSEdhd1RHU3ByZFlyZ1FEQ2RwU3JVT1R1SHU2WnBuTm5TSkxRcGJqQnd4M256SW5nWU9GQ1B3a1NIRjRjZ2lnTVJCaUo0RU96dzRza2ZjT0twOWN2N0pVMmFueTFsZGRBOWI5Ny85LzIrWmMybHgwL1M0elJDaUVMQlFBQlJJU3lpME5qVlRPSTB3aHI4MElHQ0tLeHhHanZ0QmsrRVl2Z3pxQnZvSEs5VThxTEFzZEsyTkoxcHZpaHpKVmIxN2RGNkJEVjhMR1U0RHdrS1cxS0ZjZ3NOK0dqYWtiWDFNWHowc1dYdjIxOW1yMW1qUDU2dnFQR2lYRmJGbWJnamtXOUhsOTA0TlA2VCtkRzB0YUNQWkp0ZUw0dlJJclovelpHTFVvRlhlUHhMYXR0WkduZEQ0THlML09kdCsyN05lUTk4aERhLzBxaEwyYUhHVVEyWnAzWWgyeEF6V2FkdkovYnRqMXU5TEdJalRmQ2F1MHlpclpVekx1VjJES2RHejZWeUhqR09IS1lZQnBPbG5sT0JuWnNVOW5uMDU0ekxmSFpUbHhGcVM2Z3BUSytvRVdXdDBqeWh4K0thblJ5aldPWjJyZEVKbzVyUEhxTnZzajFMWC9aazFCWURidGF0NTBsNzNVUGJDVGd1WXlicnNYdjc0VHF2b21tTGtBbmRieDQrYk8xUEp6VzFwaXhpSVRYNi9RRUNkdDhEWGxuY21BUFNOS1B4ektzNTBKL29td1VPTFBRQUU4dDl3Q05IaWYzd0pBSWVHaWtBRDk0ZUFmYmVlazE0YWhwNG9LY2J1RzhoRGR4N1BnN2M4eUlHM1BWa0NSaDdWZ1YyTFRIQThJODd3R0JtRVVodHJHcGthcCtoTHZPWDFHZisvUHBKZUJmaW1OLzBHdkNiYnY4YUlWd2ZnNzZaNm1YeS9HV0Y4Tk9rT3ovT0VuNlliK2I3YkRQZm5TVmMxZVBlNkhFdkh4S3U2SDdQRmNMbC9ZUlA1OTM1V1BkL1ZOV3ArOStIOFpEdGExK0lFOWx5R1pIM282R2tDNnpLSnErWDJDSnZjdytYNUp0SkNldTFrQ2orQkxTbDFPdjF0L2E4aHBPV2x6S1UybXQ2eHJqL0lzOU9WSGpEcE1vcUsyS2haa3UwVTFaVVFaWndxb0QyN1RSa2E3V2paRlBFS3BKV3VwRGdibFNrcWNUQWNXMGVzSk9mcUM0UFdtU0sxQXpXOVZ3aG8wVmVtaENrUm9zaW0rZEY0d1dJRndFakpwV1NZUDZQeE5weWtveWlhemhaTkRRd0hLcjlBMU52Q3VTVkN3QUEifQ== -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["party"],"name":[1],"type":["chr"],"align":["left"]},{"label":["election_year"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["total"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Democrat","2":"2020","3":"1874333"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
+{"columns":[{"label":["party"],"name":[1],"type":["chr"],"align":["left"]},{"label":["league"],"name":[2],"type":["chr"],"align":["left"]},{"label":["total"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Republican","2":"MLB","3":"14582661"},{"1":"Republican","2":"NBA","3":"5225100"},{"1":"Republican","2":"NHL","3":"5010016"},{"1":"Republican","2":"NFL","3":"4621270"},{"1":"Democrat","2":"MLB","3":"4466729"},{"1":"Republican","2":"NBA, NHL","3":"1884800"},{"1":"Democrat","2":"NHL","3":"1189500"},{"1":"Democrat","2":"NBA","3":"1154079"},{"1":"Republican","2":"WNBA","3":"973459"},{"1":"Democrat","2":"WNBA","3":"824640"},{"1":"N/A","2":"NBA, MLB","3":"800000"},{"1":"Bipartisan","2":"NFL","3":"665650"},{"1":"Democrat","2":"NFL","3":"607400"},{"1":"Republican","2":"NASCAR","3":"573410"},{"1":"Republican","2":"NBA, MLB","3":"563900"},{"1":"Democrat","2":"NBA, MLB","3":"427975"},{"1":"Bipartisan","2":"MLB","3":"386833"},{"1":"Republican","2":"NBA, WNBA","3":"365000"},{"1":"Democrat","2":"NBA, WNBA","3":"356100"},{"1":"Democrat","2":"MLB, WNBA","3":"289900"},{"1":"Democrat","2":"NBA, NHL","3":"273720"},{"1":"Republican","2":"NBA, NFL","3":"251400"},{"1":"Bipartisan","2":"NHL","3":"212466"},{"1":"Democrat","2":"NBA, NFL","3":"166100"},{"1":"Democrat","2":"NBA, NHL, WNBA","3":"163513"},{"1":"Republican","2":"NHL, NFL","3":"126400"},{"1":"Democrat","2":"NBA, NFL, NHL","3":"100000"},{"1":"Democrat","2":"NASCAR","3":"93983"},{"1":"Bipartisan, but mostly Republican","2":"NBA","3":"92500"},{"1":"Bipartisan, but mostly Republican","2":"WNBA","3":"82093"},{"1":"Bipartisan","2":"NASCAR","3":"50000"},{"1":"Bipartisan","2":"NBA, WNBA","3":"39000"},{"1":"Bipartisan, but mostly Republican","2":"MLB","3":"35500"},{"1":"Republican","2":"NBA, NFL, NHL","3":"33400"},{"1":"Republican","2":"MLB, NHL","3":"32500"},{"1":"Bipartisan","2":"MLB, WNBA","3":"25000"},{"1":"Bipartisan","2":"NBA, MLB","3":"25000"},{"1":"Bipartisan, but mostly Republican","2":"NBA, WNBA","3":"25000"},{"1":"Bipartisan","2":"NBA","3":"22000"},{"1":"Bipartisan","2":"MLB, NHL","3":"20000"},{"1":"N/A","2":"NFL","3":"20000"},{"1":"Bipartisan","2":"NBA, NFL, NHL","3":"15000"},{"1":"N/A","2":"NBA, WNBA","3":"15000"},{"1":"N/A","2":"MLB","3":"13950"},{"1":"Bipartisan, but mostly Republican","2":"NFL","3":"12500"},{"1":"Bipartisan, but mostly Republican","2":"NASCAR","3":"11000"},{"1":"Independent","2":"NBA","3":"8100"},{"1":"Bipartisan, but mostly Republican","2":"NHL","3":"7500"},{"1":"Bipartisan, but mostly Democratic","2":"NHL","3":"6000"},{"1":"Independent","2":"NBA, MLB","3":"5400"},{"1":"Bipartisan","2":"NBA, NFL","3":"5000"},{"1":"Bipartisan","2":"NHL, NFL","3":"5000"},{"1":"Bipartisan, but mostly Republican","2":"NBA, NHL","3":"5000"},{"1":"Bipartisan","2":"WNBA","3":"3750"},{"1":"Bipartisan, but mostly Democratic","2":"NBA, NHL","3":"2800"},{"1":"Republican","2":"MLB, NASCAR","3":"2700"},{"1":"Bipartisan, but mostly Democratic","2":"NBA, MLB","3":"2000"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[57]},"pages":{}}}
   </script>
 </div>
 <!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>#Question 3: “Overall, 51.7 percent of all contributions by WNBA
+owners went to Democrats, with 42.3 percent going to Republicans. And of
+the $1.3 million contributed by WNBA owners to Republicans, 65.5 percent
+comes from Kelly Loeffler, the Republican from Georgia who is co-owner
+of the Atlanta Dream.”</p>
+<p>Part 1. Figure out how much WNBA owners contribute to the democrat
+party compared to the republican party.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3BvcnRzX3BvbGl0Y2FsMiAlPiVcbiAgZ3JvdXBfYnkocGFydHkpICU+JVxuICBmaWx0ZXIoc3RyX2RldGVjdChsZWFndWUsIFwiV05CQVwiKSkgJT4lXG5zdW1tYXJpemUodG90YWwgPSBzdW0oYW1vdW50KSkgJT4lXG5hcnJhbmdlKGRlc2ModG90YWwpKVxuYGBgIn0= -->
+<pre class="r"><code>sports_politcal2 %&gt;%
+  group_by(party) %&gt;%
+  filter(str_detect(league, &quot;WNBA&quot;)) %&gt;%
+summarize(total = sum(amount)) %&gt;%
+arrange(desc(total))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6NSwibmNvbCI6Miwic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyI1IMOXIDIiXX19LCJyZGYiOiJINHNJQUFBQUFBQUFBMlZSc1U3RE1CQjEzUVpvcEZhVitnTmhZQ05CQ0lhTUJGVk1DS0VLcEVvc09La0JDOGVPRWtmUWpabC80MXRnQnFuaDdOaEFnd2UvZTgvM2ZIZjJmTFk0OGhjK1FxaVBCaGlqdmdjaDhxNnZ6c0lZZ1FLa2h3Wm9xUEVaa3FZUWFIR2lzK3pCem96bU1pdUpzdHlmMDZKT09jdUlzTXJ1S1N0SXFWaEZ4SDZRMWlySVphWDRLdmlYNlA4bVdxVi9jWkFBakhXOUpINW51cjNrbU45b1BQbmN1elQ0OFhwcjhPMGN0V3VqY1UrUW5GYTJhZXhFWFdmbGlKS0s4STV0V01xbnlGbEgydm9DVzlNMFg5MzdNMDRxZDc4VC9TVlJKTG9yd1E5czNiRnN5MEl4S2NDRXArWWxOODI5c2lOTWFxRTdXWWJaUXkwZXc4TllWekRuN1JyWjJQc1Q0N1ltYmpyZnRVWEZQUlBVTmM5SlNya2xZeGpaVEJ3VkpSTS8vd2xxRmJWUFpKVk1jcWVZNGRENkcrUHNvZnBKQWdBQSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["party"],"name":[1],"type":["chr"],"align":["left"]},{"label":["total"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"Democrat","2":"1634153"},{"1":"Republican","2":"1338459"},{"1":"Bipartisan, but mostly Republican","2":"107093"},{"1":"Bipartisan","2":"67750"},{"1":"N/A","2":"15000"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[5]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuTkFcbk5BXG5gYGAifQ== -->
+<pre class="r"><code>NA
+NA</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Part 2. Single out Loeffler’s total contributions to the Republican
+party</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3BvcnRzX3BvbGl0Y2FsMiAlPiVcbmdyb3VwX2J5KHBhcnR5LCBvd25lcikgJT4lXG4gIGZpbHRlcihzdHJfZGV0ZWN0KG93bmVyLCBcIktlbGx5IExvZWZmbGVyXCIpKSAlPiVcbnN1bW1hcml6ZSh0b3RhbCA9IHN1bShhbW91bnQpKSAlPiVcbmFycmFuZ2UoZGVzYyh0b3RhbCkpXG5gYGAifQ== -->
+<pre class="r"><code>sports_politcal2 %&gt;%
+group_by(party, owner) %&gt;%
+  filter(str_detect(owner, &quot;Kelly Loeffler&quot;)) %&gt;%
+summarize(total = sum(amount)) %&gt;%
+arrange(desc(total))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCBoYXMgZ3JvdXBlZCBvdXRwdXQgYnkgJ3BhcnR5Jy4gWW91IGNhbiBvdmVycmlkZSB1c2luZyB0aGUgYC5ncm91cHNgIGFyZ3VtZW50LlxuIn0= -->
+<pre><code>`summarise()` has grouped output by &#39;party&#39;. You can override using the `.groups` argument.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjIsIm5jb2wiOjMsInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMiDDlyAzIl0sIkdyb3VwcyI6WyJwYXJ0eSBbMl0iXX19LCJyZGYiOiJINHNJQUFBQUFBQUFBM1dRUzA3RE1CQ0dwM21BR3Frb0VoY0lXMFN5b0J1V2dCQWJXRlVnZGV1a0RsaTRkdVE0S3QyeDVGRGNnbXR3aG9aeGJLTTJFcFpzajc4Wi8vTlkzQzNueVRJQmdCQ2lJSUF3UmhQaTU2ZjcvQXFRNEdNQ0VVek4vWTVCcDBNa1FJbzdjSTVrUVp1dTVLd2l3cEd6VzlZUXBWbEx4RVZXZGpwYnkxYnpiYllYZUNoeDhrQTUraDhscld0TzFUOFVpZmx6Yy83MVk2cTgvdjRFdXc3cWpDdE8ydFlsOERCWkVVMktXcEUxSFlWUGxkd1VBcm41TWpQNkgzajBmYjhiNi9xZzFFN0xRdFBuMWova1J2d1ZIMnVwQ1VkanJITXNHODJrUUtYQVRETWVWVHBSSTVCMndtUmU1ZFZySjk3eXk3bHBaL0RiTlhOMnNHZUhObWZVTzYzWWFSMVI4Y0lFOVNWeVVsTHVoNDF6R0Rvc0dzV0U5bk5EMmhhMkZVY3F5VDBabW9QZEx4WnZhcWRGQWdBQSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["party"],"name":[1],"type":["chr"],"align":["left"]},{"label":["owner"],"name":[2],"type":["chr"],"align":["left"]},{"label":["total"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Republican","2":"Kelly Loeffler","3":"876150"},{"1":"Bipartisan, but mostly Republican","2":"Kelly Loeffler","3":"20000"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>#Question 4: “A relatively small group of donors makes up a huge
+chunk of the overall donation data. Forty owners account for more than
+$40 million — more than 85 percent of all contributions. And looking
+specifically at these big spenders, it’s clear where their allegiances
+lie: 77.7 percent of that $40 million went to Republican causes or
+candidates, with 18.8 percent going to Democrats.”</p>
+<p>Part 1. Find the the forty donors that paid the most.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGlnaGVzdF9zcGVuZGluZ19vd25lcnMgPC0gc3BvcnRzX3BvbGl0Y2FsMiAlPiVcbmdyb3VwX2J5KG93bmVyKSAlPiVcbiAgc3VtbWFyaXplKHRvdGFsID0gc3VtKGFtb3VudCkpICU+JVxuICBhcnJhbmdlKGRlc2ModG90YWwpKSAlPiVcbiAgaGVhZCg0MCkgXG5gYGAifQ== -->
+<pre class="r"><code>highest_spending_owners &lt;- sports_politcal2 %&gt;%
+group_by(owner) %&gt;%
+  summarize(total = sum(amount)) %&gt;%
+  arrange(desc(total)) %&gt;%
+  head(40) </code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>part 2. sum up the total sum of contributions for the 40 owners</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGlnaGVzdF9zcGVuZGluZ19vd25lcnMgJT4lIFxuIHN1bW1hcml6ZSh0b3RhbCA9IHN1bSh0b3RhbCkpIFxuYGBgIn0= -->
+<pre class="r"><code>highest_spending_owners %&gt;% 
+ summarize(total = sum(total)) </code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6MSwic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyIxIMOXIDEiXX19LCJyZGYiOiJINHNJQUFBQUFBQUFBMTFRUVFyQ01CRGNwbzNTZ3FYZ085cUxpRjRGOFFHaTREWFdxc1dZbERaRmo0SWY5ZXdqcXB1YVFrMGcyZDFoWm5jbjYrVnVFdXdDQUhEQkl3UmNpaW5RN1dZVnp3RVJMQnp3d05meGpxUnhDd0NFT2k2ZWIvblMvSDhpRmV5YVZaaEVmVkJKeGJqRjlFdDVTenIyQ0M5NTRQUEJZN2RNT2F2c2xzR0JLWlljUzlSajFWaVNvU3hVTGdXS2lGNmFXbUtudElDb0ZucVRRNXllYTNHSnB6TTl3YmdGczU1amJpL1hNOG5IOUtLbTF5QVRwMXhrM2ZLYzdUTnVpaEF0dDQ2VG9zeUY2cXdnV2lXL0x6SklLbm1IdE9hZytRTHdRaXgyckFFQUFBPT0ifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["total"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"41766396"}],"options":{"columns":{"min":{},"max":[10],"total":[1]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Part 3. sum up all contributions to find percentage</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3BvcnRzX3BvbGl0Y2FsMiAlPiVcbiAgc3VtbWFyaXplKHRvdGFsID0gc3VtKGFtb3VudCkpIFxuYGBgIn0= -->
+<pre class="r"><code>sports_politcal2 %&gt;%
+  summarize(total = sum(amount)) </code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6MSwic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyIxIMOXIDEiXX19LCJyZGYiOiJINHNJQUFBQUFBQUFBMTFRd1FyQ01Bek51bFhaUUJIOGp1M2lRYStDaUdkUjhGcm4xR0Z0UjllaFIwOStrZDgzVFdjTDJrS2I1UEZla3RmMVlqZEpkZ2tBaEJBUkFpSEZGT2gyczB4bmdBZ1dBVVFRbTNoSDByZ0RBSVltenAvSDE4cncvNGxVc0d0Ull6TDZCYlhVakh2TVdNbGI1dGdEdk9TQnp4dVAzekxuclBaYkpnZW1XWFpVcU1lcTlTUjlXZWxTQ2hRUnN6VDF4SUh5Z0ZFanpDYUhORDgzNHBKT3BtYUNkUXQydmNEZW45ek1KRy9iaTlwZXZVS2NTbEc0NVRuYkY5d1dRN1RjT2M0cVZRcnRyQ0JhWjk4dnNrZ3V1VU02YzlCK0FKQmdIaENzQVFBQSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["total"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"46978697"}],"options":{"columns":{"min":{},"max":[10],"total":[1]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Part 4. Filter out how many of the 40 largest contributions went to
+Republicans vs democrats</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud2VhbHRoeV9vd25lcl9hbGxlZ2lhbmNlIDwtIHNwb3J0c19wb2xpdGNhbDIgJT4lXG5ncm91cF9ieShwYXJ0eSwgb3duZXIpICU+JVxuICBzdW1tYXJpemUodG90YWwgPSBzdW0oYW1vdW50KSkgJT4lXG4gIGFycmFuZ2UoZGVzYyh0b3RhbCkpICU+JVxuICBoZWFkKDQwKSBcbmBgYCJ9 -->
+<pre class="r"><code>wealthy_owner_allegiance &lt;- sports_politcal2 %&gt;%
+group_by(party, owner) %&gt;%
+  summarize(total = sum(amount)) %&gt;%
+  arrange(desc(total)) %&gt;%
+  head(40) </code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCBoYXMgZ3JvdXBlZCBvdXRwdXQgYnkgJ3BhcnR5Jy4gWW91IGNhbiBvdmVycmlkZSB1c2luZyB0aGUgYC5ncm91cHNgIGFyZ3VtZW50LlxuIn0= -->
+<pre><code>`summarise()` has grouped output by &#39;party&#39;. You can override using the `.groups` argument.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud2VhbHRoeV9vd25lcl9hbGxlZ2lhbmNlICU+JVxuICBncm91cF9ieShwYXJ0eSkgJT4lXG5zdW1tYXJpemUodG90YWwgPSBzdW0odG90YWwpKSAlPiVcbmFycmFuZ2UoZGVzYyh0b3RhbCkpXG5gYGAifQ== -->
+<pre class="r"><code>wealthy_owner_allegiance %&gt;%
+  group_by(party) %&gt;%
+summarize(total = sum(total)) %&gt;%
+arrange(desc(total))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>#Question 5: “And when we isolate just the big-ticket donations
+topping $100,000 from this group, a familiar picture emerges. More than
+63 percent of the $47 million in the database of nearly 3,000
+contributions comes from just 108 donations split among these 40 owners
+— and 79 percent of that money went to Republican causes. No matter how
+you slice it, the big takeaway is clear: The biggest political spenders
+in pro sports prefer red to blue.”</p>
+<!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKVGhpcyBpcyBhbiBbUiBNYXJrZG93bl0oaHR0cDovL3JtYXJrZG93bi5yc3R1ZGlvLmNvbSkgTm90ZWJvb2suIFdoZW4geW91IGV4ZWN1dGUgY29kZSB3aXRoaW4gdGhlIG5vdGVib29rLCB0aGUgcmVzdWx0cyBhcHBlYXIgYmVuZWF0aCB0aGUgY29kZS4gCgpUcnkgZXhlY3V0aW5nIHRoaXMgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpSdW4qIGJ1dHRvbiB3aXRoaW4gdGhlIGNodW5rIG9yIGJ5IHBsYWNpbmcgeW91ciBjdXJzb3IgaW5zaWRlIGl0IGFuZCBwcmVzc2luZyAqQ21kK1NoaWZ0K0VudGVyKi4gCgpgYGB7cn0KcGxvdChjYXJzKQpgYGAKCmBgYHtyfQpsaWJyYXJ5KGtuaXRyKQpsaWJyYXJ5KHRpZHl2ZXJzZSkKbGlicmFyeShqYW5pdG9yKQpsaWJyYXJ5KGRwbHlyKQpgYGAKQWRkIGEgbmV3IGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqSW5zZXJ0IENodW5rKiBidXR0b24gb24gdGhlIHRvb2xiYXIgb3IgYnkgcHJlc3NpbmcgKkNtZCtPcHRpb24rSSouCgpXaGVuIHlvdSBzYXZlIHRoZSBub3RlYm9vaywgYW4gSFRNTCBmaWxlIGNvbnRhaW5pbmcgdGhlIGNvZGUgYW5kIG91dHB1dCB3aWxsIGJlIHNhdmVkIGFsb25nc2lkZSBpdCAoY2xpY2sgdGhlICpQcmV2aWV3KiBidXR0b24gb3IgcHJlc3MgKkNtZCtTaGlmdCtLKiB0byBwcmV2aWV3IHRoZSBIVE1MIGZpbGUpLiAKClRoZSBwcmV2aWV3IHNob3dzIHlvdSBhIHJlbmRlcmVkIEhUTUwgY29weSBvZiB0aGUgY29udGVudHMgb2YgdGhlIGVkaXRvci4gQ29uc2VxdWVudGx5LCB1bmxpa2UgKktuaXQqLCAqUHJldmlldyogZG9lcyBub3QgcnVuIGFueSBSIGNvZGUgY2h1bmtzLiBJbnN0ZWFkLCB0aGUgb3V0cHV0IG9mIHRoZSBjaHVuayB3aGVuIGl0IHdhcyBsYXN0IHJ1biBpbiB0aGUgZWRpdG9yIGlzIGRpc3BsYXllZC4KYGBge3J9CnNwb3J0c19wb2xpdGljYWxfZG9uYXRpb25zIDwtIHJlYWRfY3N2KCJkYXRhL3Nwb3J0c19wb2xpdGljYWxfZG9uYXRpb25zXy5jc3YiKQpgYGAKCmBgYHtyfQojIGNsZWFuaW5nIGZ1bmN0aW9uCmNsZWFuX3Nwb3J0c19wb2xpdGljYWxfZG9uYXRpb25zIDwtIHNwb3J0c19wb2xpdGljYWxfZG9uYXRpb25zICU+JQogIGNsZWFuX25hbWVzKCkKYGBgCgojUXVlc3Rpb24gMQojUDEucmVtb3ZpbmcgZG9sbGFyIHNpZ25zL2NvbW1hcyBmcm9tIGFtb3VudCBjb2x1bW4KCmBgYHtyfQpzcG9ydHNfcG9saXRjYWwyIDwtIGNsZWFuX3Nwb3J0c19wb2xpdGljYWxfZG9uYXRpb25zICU+JQogbXV0YXRlKAogICAgICAgIGFjcm9zcyguY29scyA9IGMoImFtb3VudCIpLAogICAgICAgICAgICAgICAuZm5zID0gcGFyc2VfbnVtYmVyKSkKYGBgCiNQdC4gMiBmaWd1cmluZyBvdXQgdGhlIHRvdGFsIG9mIGFsbCBkb25hdGlvbnMgKCQ0Njk3ODY5Ny9uZWFybHkgJDQ3MDAwMDAwKQpgYGB7cn0Kc3BvcnRzX3BvbGl0Y2FsMiAlPiUKICBzdW1tYXJpc2UodG90YWwgPSBzdW0oYW1vdW50KSkgJT4lCmFycmFuZ2UoZGVzYyh0b3RhbCkpCmBgYApQdC4gMyBSZXB1YmxpY2FuIGFuZCBEZW1vY3JhdCBkb25hdGlvbnMgaW4gMjAyMApgYGB7cn0Kc3BvcnRzX3BvbGl0Y2FsMiAlPiUKICBncm91cF9ieShwYXJ0eSwgZWxlY3Rpb25feWVhcikgJT4lCmZpbHRlcihwYXJ0eSA9PSAiUmVwdWJsaWNhbiIpICU+JQogICAgICAgICBmaWx0ZXIoZWxlY3Rpb25feWVhciA9PSAnMjAyMCcpICU+JQpzdW1tYXJpemUodG90YWwgPSBzdW0oYW1vdW50KSkgJT4lCmFycmFuZ2UoZGVzYyh0b3RhbCkpCmBgYApgYGB7cn0Kc3BvcnRzX3BvbGl0Y2FsMiAlPiUKICBncm91cF9ieShwYXJ0eSwgZWxlY3Rpb25feWVhcikgJT4lCmZpbHRlcihwYXJ0eSA9PSAiRGVtb2NyYXQiKSAlPiUKICAgICAgICAgZmlsdGVyKGVsZWN0aW9uX3llYXIgPT0gJzIwMjAnICkgJT4lCnN1bW1hcml6ZSh0b3RhbCA9IHN1bShhbW91bnQpKSAlPiUKYXJyYW5nZShkZXNjKHRvdGFsKSkKYGBg</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKVGhpcyBpcyBhbiBbUiBNYXJrZG93bl0oaHR0cDovL3JtYXJrZG93bi5yc3R1ZGlvLmNvbSkgTm90ZWJvb2suIFdoZW4geW91IGV4ZWN1dGUgY29kZSB3aXRoaW4gdGhlIG5vdGVib29rLCB0aGUgcmVzdWx0cyBhcHBlYXIgYmVuZWF0aCB0aGUgY29kZS4gCgpUcnkgZXhlY3V0aW5nIHRoaXMgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpSdW4qIGJ1dHRvbiB3aXRoaW4gdGhlIGNodW5rIG9yIGJ5IHBsYWNpbmcgeW91ciBjdXJzb3IgaW5zaWRlIGl0IGFuZCBwcmVzc2luZyAqQ21kK1NoaWZ0K0VudGVyKi4gCgpgYGB7cn0KcGxvdChjYXJzKQpgYGAKCmBgYHtyfQpsaWJyYXJ5KGtuaXRyKQpsaWJyYXJ5KHRpZHl2ZXJzZSkKbGlicmFyeShqYW5pdG9yKQpsaWJyYXJ5KGRwbHlyKQpgYGAKQWRkIGEgbmV3IGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqSW5zZXJ0IENodW5rKiBidXR0b24gb24gdGhlIHRvb2xiYXIgb3IgYnkgcHJlc3NpbmcgKkNtZCtPcHRpb24rSSouCgpXaGVuIHlvdSBzYXZlIHRoZSBub3RlYm9vaywgYW4gSFRNTCBmaWxlIGNvbnRhaW5pbmcgdGhlIGNvZGUgYW5kIG91dHB1dCB3aWxsIGJlIHNhdmVkIGFsb25nc2lkZSBpdCAoY2xpY2sgdGhlICpQcmV2aWV3KiBidXR0b24gb3IgcHJlc3MgKkNtZCtTaGlmdCtLKiB0byBwcmV2aWV3IHRoZSBIVE1MIGZpbGUpLiAKClRoZSBwcmV2aWV3IHNob3dzIHlvdSBhIHJlbmRlcmVkIEhUTUwgY29weSBvZiB0aGUgY29udGVudHMgb2YgdGhlIGVkaXRvci4gQ29uc2VxdWVudGx5LCB1bmxpa2UgKktuaXQqLCAqUHJldmlldyogZG9lcyBub3QgcnVuIGFueSBSIGNvZGUgY2h1bmtzLiBJbnN0ZWFkLCB0aGUgb3V0cHV0IG9mIHRoZSBjaHVuayB3aGVuIGl0IHdhcyBsYXN0IHJ1biBpbiB0aGUgZWRpdG9yIGlzIGRpc3BsYXllZC4KYGBge3J9CnNwb3J0c19wb2xpdGljYWxfZG9uYXRpb25zIDwtIHJlYWRfY3N2KCJkYXRhL3Nwb3J0c19wb2xpdGljYWxfZG9uYXRpb25zXy5jc3YiKQpgYGAKCmBgYHtyfQojIGNsZWFuaW5nIGZ1bmN0aW9uCmNsZWFuX3Nwb3J0c19wb2xpdGljYWxfZG9uYXRpb25zIDwtIHNwb3J0c19wb2xpdGljYWxfZG9uYXRpb25zICU+JQogIGNsZWFuX25hbWVzKCkKYGBgCgojUXVlc3Rpb24gMTrigJxBbWVyaWNhbiBwcm9mZXNzaW9uYWwgc3BvcnRzIG93bmVycyBoYXZlIGNvbnRyaWJ1dGVkIG5lYXJseSAkNDcgbWlsbGlvbiBpbiBmZWRlcmFsIGVsZWN0aW9ucyBzaW5jZSAyMDE1LCBhY2NvcmRpbmcgdG8gcmVzZWFyY2ggYnkgRVNQTiBpbiBwYXJ0bmVyc2hpcCB3aXRoIEZpdmVUaGlydHlFaWdodCwgaW5jbHVkaW5nICQxMCBtaWxsaW9uIHRvIFJlcHVibGljYW4gY2F1c2VzIGFuZCAkMS45IG1pbGxpb24gdG8gRGVtb2NyYXRpYyBjYXVzZXMgc28gZmFyIGluIHRoZSAyMDIwIGVsZWN0aW9uIGN5Y2xlLuKAnQoKI1AxLnJlbW92aW5nIGRvbGxhciBzaWducy9jb21tYXMgZnJvbSBhbW91bnQgY29sdW1uCgpgYGB7cn0Kc3BvcnRzX3BvbGl0Y2FsMiA8LSBjbGVhbl9zcG9ydHNfcG9saXRpY2FsX2RvbmF0aW9ucyAlPiUKIG11dGF0ZSgKICAgICAgICBhY3Jvc3MoLmNvbHMgPSBjKCJhbW91bnQiKSwKICAgICAgICAgICAgICAgLmZucyA9IHBhcnNlX251bWJlcikpCmBgYAojUHQuIDIgZmlndXJpbmcgb3V0IHRoZSB0b3RhbCBvZiBhbGwgZG9uYXRpb25zICgkNDY5Nzg2OTcvbmVhcmx5ICQ0NzAwMDAwMCkKYGBge3J9CnNwb3J0c19wb2xpdGNhbDIgJT4lCiAgc3VtbWFyaXNlKHRvdGFsID0gc3VtKGFtb3VudCkpICU+JQphcnJhbmdlKGRlc2ModG90YWwpKQpgYGAKUHQuIDMgUmVwdWJsaWNhbiBhbmQgRGVtb2NyYXQgZG9uYXRpb25zIGluIDIwMjAKYGBge3J9CnNwb3J0c19wb2xpdGNhbDIgJT4lCiAgZ3JvdXBfYnkocGFydHksIGVsZWN0aW9uX3llYXIpICU+JQpmaWx0ZXIocGFydHkgPT0gIlJlcHVibGljYW4iKSAlPiUKICAgICAgICAgZmlsdGVyKGVsZWN0aW9uX3llYXIgPT0gJzIwMjAnKSAlPiUKc3VtbWFyaXplKHRvdGFsID0gc3VtKGFtb3VudCkpICU+JQphcnJhbmdlKGRlc2ModG90YWwpKQpgYGAKYGBge3J9CnNwb3J0c19wb2xpdGNhbDIgJT4lCiAgZ3JvdXBfYnkocGFydHksIGVsZWN0aW9uX3llYXIpICU+JQpmaWx0ZXIocGFydHkgPT0gIkRlbW9jcmF0IikgJT4lCiAgICAgICAgIGZpbHRlcihlbGVjdGlvbl95ZWFyID09ICcyMDIwJyApICU+JQpzdW1tYXJpemUodG90YWwgPSBzdW0oYW1vdW50KSkgJT4lCmFycmFuZ2UoZGVzYyh0b3RhbCkpCmBgYAojUXVlc3Rpb24gMjog4oCcTUxCIG93bmVycyBoYXZlIGRvbmF0ZWQgdGhlIG1vc3QuIFNwZWNpZmljYWxseSBwYXJ0aXNhbiBjb250cmlidXRpb25zIGZyb20gb3duZXJzIGFuZCBjb21taXNzaW9uZXJzIGluIHRoZSBORkwsIE5CQSwgV05CQSwgTkhMLCBNTEIgYW5kIE5BU0NBUiwgYnkgcGFydHksIDIwMTYtMjAu4oCdIAoKUGFydCAxLiAoYWxzbyB0aGUgb25seSBwYXJ0KS4gRmluZCB3aGV0aGVyIE1MQiBvd25lcnMgaGF2ZSBhY3R1YWxseSBkb25hdGVkIHRoZSBtb3N0IGFuZCBnYXRoZXIgYW1vdW50cyBmb3IgZWFjaCBsZWFndWUgYW5kIHBhcnR5IHNvIHlvdSBjYW4gYWxzbyBzZWUgd2hldGhlciBORkwsIE5CQSwgV05CQSwgTkhMLCBNTEIgYW5kIE5BU0NBUiBjb250cmlidXRpb25zIHdlcmUgcGFydGlzYW4uCmBgYHtyfQpzcG9ydHNfcG9saXRjYWwyICU+JQpncm91cF9ieShwYXJ0eSwgbGVhZ3VlKSAlPiUKc3VtbWFyaXplKHRvdGFsID0gc3VtKGFtb3VudCkpICU+JQphcnJhbmdlKGRlc2ModG90YWwpKQpgYGAKCiNRdWVzdGlvbiAzOiDigJxPdmVyYWxsLCA1MS43IHBlcmNlbnQgb2YgYWxsIGNvbnRyaWJ1dGlvbnMgYnkgV05CQSBvd25lcnMgd2VudCB0byBEZW1vY3JhdHMsIHdpdGggNDIuMyBwZXJjZW50IGdvaW5nIHRvIFJlcHVibGljYW5zLiBBbmQgb2YgdGhlICQxLjMgbWlsbGlvbiBjb250cmlidXRlZCBieSBXTkJBIG93bmVycyB0byBSZXB1YmxpY2FucywgNjUuNSBwZXJjZW50IGNvbWVzIGZyb20gS2VsbHkgTG9lZmZsZXIsIHRoZSBSZXB1YmxpY2FuIGZyb20gR2VvcmdpYSB3aG8gaXMgY28tb3duZXIgb2YgdGhlIEF0bGFudGEgRHJlYW0u4oCdCgpQYXJ0IDEuIEZpZ3VyZSBvdXQgaG93IG11Y2ggV05CQSBvd25lcnMgY29udHJpYnV0ZSB0byB0aGUgZGVtb2NyYXQgcGFydHkgY29tcGFyZWQgdG8gdGhlIHJlcHVibGljYW4gcGFydHkuCgpgYGB7cn0Kc3BvcnRzX3BvbGl0Y2FsMiAlPiUKICBncm91cF9ieShwYXJ0eSkgJT4lCiAgZmlsdGVyKHN0cl9kZXRlY3QobGVhZ3VlLCAiV05CQSIpKSAlPiUKc3VtbWFyaXplKHRvdGFsID0gc3VtKGFtb3VudCkpICU+JQphcnJhbmdlKGRlc2ModG90YWwpKQpgYGAKUGFydCAyLiBTaW5nbGUgb3V0IExvZWZmbGVyJ3MgdG90YWwgY29udHJpYnV0aW9ucyB0byB0aGUgUmVwdWJsaWNhbiBwYXJ0eQpgYGB7cn0Kc3BvcnRzX3BvbGl0Y2FsMiAlPiUKZ3JvdXBfYnkocGFydHksIG93bmVyKSAlPiUKICBmaWx0ZXIoc3RyX2RldGVjdChvd25lciwgIktlbGx5IExvZWZmbGVyIikpICU+JQpzdW1tYXJpemUodG90YWwgPSBzdW0oYW1vdW50KSkgJT4lCmFycmFuZ2UoZGVzYyh0b3RhbCkpCmBgYAojUXVlc3Rpb24gNDog4oCcQSByZWxhdGl2ZWx5IHNtYWxsIGdyb3VwIG9mIGRvbm9ycyBtYWtlcyB1cCBhIGh1Z2UgY2h1bmsgb2YgdGhlIG92ZXJhbGwgZG9uYXRpb24gZGF0YS4gRm9ydHkgb3duZXJzIGFjY291bnQgZm9yIG1vcmUgdGhhbiAkNDAgbWlsbGlvbiDigJQgbW9yZSB0aGFuIDg1IHBlcmNlbnQgb2YgYWxsIGNvbnRyaWJ1dGlvbnMuIEFuZCBsb29raW5nIHNwZWNpZmljYWxseSBhdCB0aGVzZSBiaWcgc3BlbmRlcnMsIGl04oCZcyBjbGVhciB3aGVyZSB0aGVpciBhbGxlZ2lhbmNlcyBsaWU6IDc3LjcgcGVyY2VudCBvZiB0aGF0ICQ0MCBtaWxsaW9uIHdlbnQgdG8gUmVwdWJsaWNhbiBjYXVzZXMgb3IgY2FuZGlkYXRlcywgd2l0aCAxOC44IHBlcmNlbnQgZ29pbmcgdG8gRGVtb2NyYXRzLuKAnQoKUGFydCAxLiBGaW5kIHRoZSB0aGUgZm9ydHkgZG9ub3JzIHRoYXQgcGFpZCB0aGUgbW9zdC4gCgpgYGB7cn0KaGlnaGVzdF9zcGVuZGluZ19vd25lcnMgPC0gc3BvcnRzX3BvbGl0Y2FsMiAlPiUKZ3JvdXBfYnkob3duZXIpICU+JQogIHN1bW1hcml6ZSh0b3RhbCA9IHN1bShhbW91bnQpKSAlPiUKICBhcnJhbmdlKGRlc2ModG90YWwpKSAlPiUKICBoZWFkKDQwKSAKYGBgCnBhcnQgMi4gc3VtIHVwIHRoZSB0b3RhbCBzdW0gb2YgY29udHJpYnV0aW9ucyBmb3IgdGhlIDQwIG93bmVycwoKYGBge3J9CmhpZ2hlc3Rfc3BlbmRpbmdfb3duZXJzICU+JSAKIHN1bW1hcml6ZSh0b3RhbCA9IHN1bSh0b3RhbCkpIApgYGAKClBhcnQgMy4gc3VtIHVwIGFsbCBjb250cmlidXRpb25zIHRvIGZpbmQgcGVyY2VudGFnZQpgYGB7cn0Kc3BvcnRzX3BvbGl0Y2FsMiAlPiUKICBzdW1tYXJpemUodG90YWwgPSBzdW0oYW1vdW50KSkgCmBgYApQYXJ0IDQuIEZpbHRlciBvdXQgaG93IG1hbnkgb2YgdGhlIDQwIGxhcmdlc3QgY29udHJpYnV0aW9ucyB3ZW50IHRvIFJlcHVibGljYW5zIHZzIGRlbW9jcmF0cwpgYGB7cn0Kd2VhbHRoeV9vd25lcl9hbGxlZ2lhbmNlIDwtIHNwb3J0c19wb2xpdGNhbDIgJT4lCmdyb3VwX2J5KHBhcnR5LCBvd25lcikgJT4lCiAgc3VtbWFyaXplKHRvdGFsID0gc3VtKGFtb3VudCkpICU+JQogIGFycmFuZ2UoZGVzYyh0b3RhbCkpICU+JQogIGhlYWQoNDApIAoKYGBgCmBgYHtyfQp3ZWFsdGh5X293bmVyX2FsbGVnaWFuY2UgJT4lCiAgZ3JvdXBfYnkocGFydHkpICU+JQpzdW1tYXJpemUodG90YWwgPSBzdW0odG90YWwpKSAlPiUKYXJyYW5nZShkZXNjKHRvdGFsKSkKYGBgCgojUXVlc3Rpb24gNTog4oCcQW5kIHdoZW4gd2UgaXNvbGF0ZSBqdXN0IHRoZSBiaWctdGlja2V0IGRvbmF0aW9ucyB0b3BwaW5nICQxMDAsMDAwIGZyb20gdGhpcyBncm91cCwgYSBmYW1pbGlhciBwaWN0dXJlIGVtZXJnZXMuIE1vcmUgdGhhbiA2MyBwZXJjZW50IG9mIHRoZSAkNDcgbWlsbGlvbiBpbiB0aGUgZGF0YWJhc2Ugb2YgbmVhcmx5IDMsMDAwIGNvbnRyaWJ1dGlvbnMgY29tZXMgZnJvbSBqdXN0IDEwOCBkb25hdGlvbnMgc3BsaXQgYW1vbmcgdGhlc2UgNDAgb3duZXJzIOKAlCBhbmQgNzkgcGVyY2VudCBvZiB0aGF0IG1vbmV5IHdlbnQgdG8gUmVwdWJsaWNhbiBjYXVzZXMuIE5vIG1hdHRlciBob3cgeW91IHNsaWNlIGl0LCB0aGUgYmlnIHRha2Vhd2F5IGlzIGNsZWFyOiBUaGUgYmlnZ2VzdCBwb2xpdGljYWwgc3BlbmRlcnMgaW4gcHJvIHNwb3J0cyBwcmVmZXIgcmVkIHRvIGJsdWUu4oCdCgoKCgo=</div>
 
 
 

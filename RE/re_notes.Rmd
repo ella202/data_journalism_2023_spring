@@ -32,7 +32,8 @@ clean_sports_political_donations <- sports_political_donations %>%
   clean_names()
 ```
 
-#Question 1
+#Question 1:“American professional sports owners have contributed nearly $47 million in federal elections since 2015, according to research by ESPN in partnership with FiveThirtyEight, including $10 million to Republican causes and $1.9 million to Democratic causes so far in the 2020 election cycle.”
+
 #P1.removing dollar signs/commas from amount column
 
 ```{r}
@@ -64,3 +65,76 @@ filter(party == "Democrat") %>%
 summarize(total = sum(amount)) %>%
 arrange(desc(total))
 ```
+#Question 2: “MLB owners have donated the most. Specifically partisan contributions from owners and commissioners in the NFL, NBA, WNBA, NHL, MLB and NASCAR, by party, 2016-20.” 
+
+Part 1. (also the only part). Find whether MLB owners have actually donated the most and gather amounts for each league and party so you can also see whether NFL, NBA, WNBA, NHL, MLB and NASCAR contributions were partisan.
+```{r}
+sports_politcal2 %>%
+group_by(party, league) %>%
+summarize(total = sum(amount)) %>%
+arrange(desc(total))
+```
+
+#Question 3: “Overall, 51.7 percent of all contributions by WNBA owners went to Democrats, with 42.3 percent going to Republicans. And of the $1.3 million contributed by WNBA owners to Republicans, 65.5 percent comes from Kelly Loeffler, the Republican from Georgia who is co-owner of the Atlanta Dream.”
+
+Part 1. Figure out how much WNBA owners contribute to the democrat party compared to the republican party.
+
+```{r}
+sports_politcal2 %>%
+  group_by(party) %>%
+  filter(str_detect(league, "WNBA")) %>%
+summarize(total = sum(amount)) %>%
+arrange(desc(total))
+```
+Part 2. Single out Loeffler's total contributions to the Republican party
+```{r}
+sports_politcal2 %>%
+group_by(party, owner) %>%
+  filter(str_detect(owner, "Kelly Loeffler")) %>%
+summarize(total = sum(amount)) %>%
+arrange(desc(total))
+```
+#Question 4: “A relatively small group of donors makes up a huge chunk of the overall donation data. Forty owners account for more than $40 million — more than 85 percent of all contributions. And looking specifically at these big spenders, it’s clear where their allegiances lie: 77.7 percent of that $40 million went to Republican causes or candidates, with 18.8 percent going to Democrats.”
+
+Part 1. Find the the forty donors that paid the most. 
+
+```{r}
+highest_spending_owners <- sports_politcal2 %>%
+group_by(owner) %>%
+  summarize(total = sum(amount)) %>%
+  arrange(desc(total)) %>%
+  head(40) 
+```
+part 2. sum up the total sum of contributions for the 40 owners
+
+```{r}
+highest_spending_owners %>% 
+ summarize(total = sum(total)) 
+```
+
+Part 3. sum up all contributions to find percentage
+```{r}
+sports_politcal2 %>%
+  summarize(total = sum(amount)) 
+```
+Part 4. Filter out how many of the 40 largest contributions went to Republicans vs democrats
+```{r}
+wealthy_owner_allegiance <- sports_politcal2 %>%
+group_by(party, owner) %>%
+  summarize(total = sum(amount)) %>%
+  arrange(desc(total)) %>%
+  head(40) 
+
+```
+```{r}
+wealthy_owner_allegiance %>%
+  group_by(party) %>%
+summarize(total = sum(total)) %>%
+arrange(desc(total))
+```
+
+#Question 5: “And when we isolate just the big-ticket donations topping $100,000 from this group, a familiar picture emerges. More than 63 percent of the $47 million in the database of nearly 3,000 contributions comes from just 108 donations split among these 40 owners — and 79 percent of that money went to Republican causes. No matter how you slice it, the big takeaway is clear: The biggest political spenders in pro sports prefer red to blue.”
+
+
+
+
