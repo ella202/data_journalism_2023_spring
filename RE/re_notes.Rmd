@@ -1,27 +1,38 @@
 ---
-title: "R Notebook"
-output: html_notebook
+title: "Reverse Engineering Project"
+author: "Ella Sherman + Austin Cole"
+date: "Date here"
+output:
+  html_document:
+    theme: cerulean
+    highlight: pygments
+    toc: true
+    toc_float:
+      collapsed: true
+      smooth_scroll: false
 ---
 
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
 
 Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
 
-```{r}
-plot(cars)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r}
+## Introduction 
+
+In this notebook, we are reverse engineering the story, [Inside The Political Donation History Of Wealthy Sports Owners](https://fivethirtyeight.com/features/inside-the-political-donation-history-of-wealthy-sports-owners/)
+
+## Load libraries
+```{r echo=FALSE, message=FALSE}
 library(knitr)
 library(tidyverse)
 library(janitor)
 library(dplyr)
 ```
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
-
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+## Load and Cleaning Data
 ```{r}
 sports_political_donations <- read_csv("data/sports_political_donations_.csv")
 ```
@@ -32,9 +43,15 @@ clean_sports_political_donations <- sports_political_donations %>%
   clean_names()
 ```
 
-#Question 1:“American professional sports owners have contributed nearly $47 million in federal elections since 2015, according to research by ESPN in partnership with FiveThirtyEight, including $10 million to Republican causes and $1.9 million to Democratic causes so far in the 2020 election cycle.”
+###Sentence 1
 
-#P1.removing dollar signs/commas from amount column
+### Sentence 1
+
+* **Sentence text**: [American professional sports owners have contributed nearly $47 million in federal elections since 2015, according to research by ESPN in partnership with FiveThirtyEight, including $10 million to Republican causes and $1.9 million to Democratic causes so far in the 2020 election cycle.]
+* **Analysis summary**: [This sentence had to be broken up in three parts having to do with mutating the money into numbers, finding out the total amount of money of donations and figuring out how much parties donated in 2020. The findings were able to be confirmed side by side with the results in the story. Mutating the csv was probably the most difficult part of the process because I had to find a solution on my own.]
+
+
+#Pt1.removing dollar signs/commas from amount column
 
 ```{r}
 sports_politcal2 <- clean_sports_political_donations %>%
@@ -48,7 +65,7 @@ sports_politcal2 %>%
   summarise(total = sum(amount)) %>%
 arrange(desc(total))
 ```
-Pt. 3 Republican and Democrat donations in 2020
+#Pt. 3 Republican and Democrat donations in 2020
 ```{r}
 sports_politcal2 %>%
   group_by(party, election_year) %>%
@@ -65,19 +82,22 @@ filter(party == "Democrat") %>%
 summarize(total = sum(amount)) %>%
 arrange(desc(total))
 ```
-#Question 2: “MLB owners have donated the most. Specifically partisan contributions from owners and commissioners in the NFL, NBA, WNBA, NHL, MLB and NASCAR, by party, 2016-20.” 
 
-Part 1. (also the only part). Find whether MLB owners have actually donated the most and gather amounts for each league and party so you can also see whether NFL, NBA, WNBA, NHL, MLB and NASCAR contributions were partisan.
+### Sentence 2
+
+* **Sentence text**: [ MLB owners have donated the most (specifically partisan contributions from owners and commissioners in the NFL, NBA, WNBA, NHL, MLB and NASCAR, by party, 2016-20.)]
+* **Analysis summary**: [For this question we are comparing MLB donations to several other sports leagues at the same time. We also need to make sure this doesn't involve bipartisan political organizations. We were able to confirm our findings]
+
 ```{r}
 sports_politcal2 %>%
 group_by(party, league) %>%
 summarize(total = sum(amount)) %>%
 arrange(desc(total))
 ```
+### Sentence 3
 
-#Question 3: “Overall, 51.7 percent of all contributions by WNBA owners went to Democrats, with 42.3 percent going to Republicans. And of the $1.3 million contributed by WNBA owners to Republicans, 65.5 percent comes from Kelly Loeffler, the Republican from Georgia who is co-owner of the Atlanta Dream.”
-
-Part 1. Figure out how much WNBA owners contribute to the democrat party compared to the republican party.
+* **Sentence text**: [Overall, 51.7 percent of all contributions by WNBA owners went to Democrats, with 42.3 percent going to Republicans.]
+* **Analysis summary**: [Our code involved filtering for the WNBA, and dividing the amounts of money by party. We were able to confirm our findings.]
 
 ```{r}
 sports_politcal2 %>%
@@ -86,7 +106,12 @@ sports_politcal2 %>%
 summarize(total = sum(amount)) %>%
 arrange(desc(total))
 ```
-Part 2. Single out Loeffler's total contributions to the Republican party
+
+### Sentence 4
+
+* **Sentence text**: [And of the $1.3 million contributed by WNBA owners to Republicans, 65.5 percent comes from Kelly Loeffler, the Republican from Georgia who is co-owner of the Atlanta Dream.]
+* **Analysis summary**: [For this code we had to single out Loeffler's total contributions to the Republican party. We were able to confirm our findings.]
+
 ```{r}
 sports_politcal2 %>%
 group_by(party, owner) %>%
@@ -94,9 +119,11 @@ group_by(party, owner) %>%
 summarize(total = sum(amount)) %>%
 arrange(desc(total))
 ```
-#Question 4: “A relatively small group of donors makes up a huge chunk of the overall donation data. Forty owners account for more than $40 million — more than 85 percent of all contributions. And looking specifically at these big spenders, it’s clear where their allegiances lie: 77.7 percent of that $40 million went to Republican causes or candidates, with 18.8 percent going to Democrats.”
 
-Part 1. Find the the forty donors that paid the most. 
+### Sentence 5
+
+* **Sentence text**: [A relatively small group of donors makes up a huge chunk of the overall donation data. Forty owners account for more than $40 million — more than 85 percent of all contributions.]
+* **Analysis summary**: [We had to find the forty owners who paid the most and then add up all their contributions. We were able to confirm the finding.]
 
 ```{r}
 highest_spending_owners <- sports_politcal2 %>%
@@ -105,19 +132,22 @@ group_by(owner) %>%
   arrange(desc(total)) %>%
   head(40) 
 ```
-part 2. sum up the total sum of contributions for the 40 owners
 
 ```{r}
 highest_spending_owners %>% 
  summarize(total = sum(total)) 
 ```
 
-Part 3. sum up all contributions to find percentage
+### Sentence 6
+
+* **Sentence text**: [And looking specifically at these big spenders, it’s clear where their allegiances lie: 77.7 percent of that $40 million went to Republican causes or candidates, with 18.8 percent going to Democrats.]
+* **Analysis summary**: [For this code we have to sum up all the contributions, filter out how much the contributions went to between republicans and democrats. findings are tbd.]
+
 ```{r}
 sports_politcal2 %>%
   summarize(total = sum(amount)) 
 ```
-Part 4. Filter out how many of the 40 largest contributions went to Republicans vs democrats
+
 ```{r}
 wealthy_owner_allegiance <- sports_politcal2 %>%
 group_by(party, owner) %>%
@@ -126,6 +156,7 @@ group_by(party, owner) %>%
   head(40) 
 
 ```
+
 ```{r}
 wealthy_owner_allegiance %>%
   group_by(party) %>%
@@ -133,7 +164,7 @@ summarize(total = sum(total)) %>%
 arrange(desc(total))
 ```
 
-#Question 5: “And when we isolate just the big-ticket donations topping $100,000 from this group, a familiar picture emerges. More than 63 percent of the $47 million in the database of nearly 3,000 contributions comes from just 108 donations split among these 40 owners — and 79 percent of that money went to Republican causes. No matter how you slice it, the big takeaway is clear: The biggest political spenders in pro sports prefer red to blue.”
+
 
 
 
