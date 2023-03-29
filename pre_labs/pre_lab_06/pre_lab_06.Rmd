@@ -158,7 +158,7 @@ The column we're interested in, ZCTA5N, is a <dbl> column - it's a number. We wa
 **Answer** a character
 
 ```{r}
-maryland_zcta <- maryland_zcta %>% mutate(ZCTA5N = as.character(ZCTA5N))
+maryland_zcta <- maryland_zcta %>% mutate(zip_code = as.character(zip_code))
 ```
 
 Now we can join this dataframe to other zip code data where the zip code column is text, not numbers.
