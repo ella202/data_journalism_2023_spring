@@ -43,11 +43,11 @@ clean_sports_political_donations <- sports_political_donations %>%
   clean_names()
 ```
 
-###Sentence 1
+
 
 ### Sentence 1
 
-* **Sentence text**: [American professional sports owners have contributed nearly $47 million in federal elections since 2015, according to research by ESPN in partnership with FiveThirtyEight, including $10 million to Republican causes and $1.9 million to Democratic causes so far in the 2020 election cycle.]
+* **Sentence text**: ["American professional sports owners have contributed nearly $47 million in federal elections since 2015, according to research by ESPN in partnership with FiveThirtyEight, including $10 million to Republican causes and $1.9 million to Democratic causes so far in the 2020 election cycle."]
 * **Analysis summary**: [This sentence had to be broken up in three parts having to do with mutating the money into numbers, finding out the total amount of money of donations and figuring out how much parties donated in 2020. The findings were able to be confirmed side by side with the results in the story. Mutating the csv was probably the most difficult part of the process because I had to find a solution on my own.]
 
 
@@ -85,8 +85,8 @@ arrange(desc(total))
 
 ### Sentence 2
 
-* **Sentence text**: [ MLB owners have donated the most (specifically partisan contributions from owners and commissioners in the NFL, NBA, WNBA, NHL, MLB and NASCAR, by party, 2016-20.)]
-* **Analysis summary**: [For this question we are comparing MLB donations to several other sports leagues at the same time. We also need to make sure this doesn't involve bipartisan political organizations. We were able to confirm our findings]
+* **Sentence text**: ["MLB owners have donated the most (specifically partisan contributions from owners and commissioners in the NFL, NBA, WNBA, NHL, MLB and NASCAR, by party, 2016-20.)"]
+* **Analysis summary**: [For this question we are comparing MLB donations to several other sports leagues at the same time. We also needed to make sure this didn't involve bipartisan political organizations. We were able to confirm our findings]
 
 ```{r}
 sports_politcal2 %>%
@@ -96,7 +96,7 @@ arrange(desc(total))
 ```
 ### Sentence 3
 
-* **Sentence text**: [Overall, 51.7 percent of all contributions by WNBA owners went to Democrats, with 42.3 percent going to Republicans.]
+* **Sentence text**: ["Overall, 51.7 percent of all contributions by WNBA owners went to Democrats, with 42.3 percent going to Republicans."]
 * **Analysis summary**: [Our code involved filtering for the WNBA, and dividing the amounts of money by party. We were able to confirm our findings.]
 
 ```{r}
@@ -109,21 +109,21 @@ arrange(desc(total))
 
 ### Sentence 4
 
-* **Sentence text**: [And of the $1.3 million contributed by WNBA owners to Republicans, 65.5 percent comes from Kelly Loeffler, the Republican from Georgia who is co-owner of the Atlanta Dream.]
-* **Analysis summary**: [For this code we had to single out Loeffler's total contributions to the Republican party. We were able to confirm our findings.]
+* **Sentence text**: ["And of the $1.3 million contributed by WNBA owners to Republicans, 65.5 percent comes from Kelly Loeffler, the Republican from Georgia who is co-owner of the Atlanta Dream."]
+* **Analysis summary**: [For this code we had to filter for Loeffler's total contributions to the Republican party. We were able to confirm our findings.]
 
 ```{r}
 sports_politcal2 %>%
 group_by(party, owner) %>%
-  filter(str_detect(owner, "Kelly Loeffler")) %>%
+  filter(owner == "Kelly Loeffler") %>%
 summarize(total = sum(amount)) %>%
 arrange(desc(total))
 ```
 
 ### Sentence 5
 
-* **Sentence text**: [A relatively small group of donors makes up a huge chunk of the overall donation data. Forty owners account for more than $40 million — more than 85 percent of all contributions.]
-* **Analysis summary**: [We had to find the forty owners who paid the most and then add up all their contributions. We were able to confirm the finding.]
+* **Sentence text**: ["A relatively small group of donors makes up a huge chunk of the overall donation data. Forty owners account for more than $40 million — more than 85 percent of all contributions."]
+* **Analysis summary**: [We had to find the 40 owners who paid the most and then add up all their contributions. We were able to confirm the finding.]
 
 ```{r}
 highest_spending_owners <- sports_politcal2 %>%
@@ -140,8 +140,8 @@ highest_spending_owners %>%
 
 ### Sentence 6
 
-* **Sentence text**: [And looking specifically at these big spenders, it’s clear where their allegiances lie: 77.7 percent of that $40 million went to Republican causes or candidates, with 18.8 percent going to Democrats.]
-* **Analysis summary**: [For this code we have to sum up all the contributions, filter out how much the contributions went to between republicans and democrats. findings are tbd.]
+* **Sentence text**: ["And looking specifically at these big spenders, it’s clear where their allegiances lie: 77.7 percent of that $40 million went to Republican causes or candidates, with 18.8 percent going to Democrats."]
+* **Analysis summary**: [For this extra bit of code we have to sum up all the contributions, filter out how much the contributions went to between Republicans and Democrats.Findings are a little bit different from what was expected: I got 77.2 percent of the $40 million going to Republican causes and 19.7 percent going to Democrats.]
 
 ```{r}
 sports_politcal2 %>%
