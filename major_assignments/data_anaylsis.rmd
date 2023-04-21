@@ -1,0 +1,101 @@
+---
+title: "Data Anylsis Project"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(janitor)
+```
+
+```{r}
+spotify_youtube <- read_csv("data_analysis/Spotify_Youtube.csv")
+```
+
+The dataset contains 28 columns and 20,718 rows. One thing we have to figure out for our project to answer our third question, "What album type makes up the top five most popular songs?" is how to define "popular". The dataset provides columns like iews, likes, comments and streams. Will/Should we just base it off views? likes? A comination of multiple?
+
+We also wern't sure what "danceability" meant and how it was defined. According to Tableau, danceability is "measured using a mixture of song features such as beat strength, tempo stability, and overall tempo. The value returned determines the ease with which a person could dance to a song over the course of the whole song."
+https://www.tableau.com/blog/danceability#:~:text=Danceability%20is%20measured%20using%20a,course%20of%20the%20whole%20song.
+
+We also wern't sure what instrumentalness meant and what the values for that colummn indicated. Instrumentalness is defined as "This value represents the amount of vocals in the song. The closer it is to 1.0, the more instrumental the song is." This means, when comparing the first two songs shown in our dataset, Feel Good Inc. is a more instrumental song in comparison to Rhinestone Eyes, because its instrumentalness value is closer to 1.
+
+
+```{r}
+clean_spotify_youtube <- spotify_youtube %>%
+clean_names()
+```
+
+```{r}
+na_test <- clean_spotify_youtube %>%
+  na.omit(datacollected) 
+```
+
+```{r}
+na_test %>%
+  group_by(artist, tempo) %>%
+ arrange(desc(tempo)) %>%
+  head(10)
+```
+
+```{r}
+na_test %>%
+  group_by(artist, tempo) %>%
+ arrange(tempo) %>%
+  head(10)
+```
+
+```{r}
+na_test %>%
+  group_by(artist) %>%
+ arrange(desc(stream)) %>%
+  head(1)
+```
+
+```{r}
+na_test %>%
+  group_by(artist) %>%
+ arrange(stream) %>%
+  head(1)
+```
+
+
+
+
+
+
+
+
+
+
+### Question 1
+
+* **Question text**: [Is there a difference in listenership between the top 10 fastest tempo songs and top 10 slowest tempo songs?]
+* **Analysis summary**: []
+
+```{r}
+
+
+```
+
+
+### Question 2
+
+* **Question text**: [What are some of the characteristics of the most and least streamed songs?]
+* **Analysis summary**: []
+
+### Question 3
+
+* **Question text**: [What album type makes up the top most popular songs?]
+* **Analysis summary**: []
+
+
+### Question 4
+
+* **Question text**: [Do instrumental tracks have a higher or lower average tempo than vocal tracks?]
+* **Analysis summary**: []
+
+### Question 5
+
+* **Question text**: [What’s the danceability score of songs with high speechiness?]
+* **Analysis summary**: []

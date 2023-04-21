@@ -1,0 +1,20 @@
+---
+title: "Data Anylsis Project"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+library(dplyr)
+```
+
+```{r}
+spotify_youtube <- read_csv("Spotify_Youtube.csv")
+```
+
+The dataset contains 28 columns and 20,718 rows. One thing we have to figure out for our project to answer our third question, "What album type makes up the top five most popular songs?" is how to define "popular". The dataset provides columns like iews, likes, comments and streams. Will/Should we just base it off views? likes? A comination of multiple?
+
+We also wern't sure what "danceability" meant and how it was defined. According to Tableau, danceability is "measured using a mixture of song features such as beat strength, tempo stability, and overall tempo. The value returned determines the ease with which a person could dance to a song over the course of the whole song."
+https://www.tableau.com/blog/danceability#:~:text=Danceability%20is%20measured%20using%20a,course%20of%20the%20whole%20song.
+
+We also wern't sure what instrumentalness meant and what the values for that colummn indicated. Instrumentalness is defined as "This value represents the amount of vocals in the song. The closer it is to 1.0, the more instrumental the song is." This means, when comparing the first two songs shown in our dataset, Feel Good Inc. is a more instrumental song in comparison to Rhinestone Eyes, because its instrumentalness value is closer to 1.
