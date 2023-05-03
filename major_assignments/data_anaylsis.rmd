@@ -33,41 +33,39 @@ new_spotify_youtube <- clean_spotify_youtube %>%
 
 ### Question 1
 
-* **Question text**: [Is there a difference in listenership between the top 10 fastest tempo songs and top 10 slowest tempo songs?]
-* **Analysis summary**: [The top 10 songs with high tempo have low danceability, have surpassed at least one million streams, have little to no speech and medium energy (I calculated the average of this which is .554). The top 10 songs with the lowest tempo had low daceability, all have more than one million streams, low speechiness and they're all low energy. I noticed some of the top low tempo songs were actually just several different recordings of white noise.]
+**Question text** [Is there a difference in listenership between faster tempo and lower tempo songs?]
+* **Analysis summary**: [It looks like there are a lot more songs above the average tempo in the dataframe — 120.6 BPM.I also noticed there's a concentration of more streams near the average and around a tempo of 175 BPM.  ]
 
 ```{r}
 new_spotify_youtube %>%
-  group_by(artist, tempo) %>%
- arrange(desc(tempo)) %>%
-  head(10)
+summarize(mean(tempo))
 ```
 ```{r}
-new_spotify_youtube %>%
-  group_by(artist, tempo) %>%
- arrange(tempo) %>%
-  head(10)
+high_tempo <- new_spotify_youtube %>%
+  filter(tempo > 120.6072)
+
+ggplot(data = high_tempo) + 
+  geom_point(mapping = aes(x = stream, y = tempo))
 ```
+
+```{r}
+low_tempo <- new_spotify_youtube %>%
+filter(tempo < 120.6072 )
+
+ggplot(data = low_tempo) + 
+  geom_point(mapping = aes(x = stream, y = tempo))
+```
+
 
 ### Question 2
 
-* **Question text**: [What are some of the characteristics of the most and least streamed songs?]
-* **Analysis summary**: [The most streamed song has medium danceability, high energy, high tempo and mbillions of streams. The least streamed song has low danceability, low energy, lower tempo and more than six thousand streams.  ]
+* **Question text**:[Is there correlation between danceability of songs and their number of streams? 
+* **Analysis summary**: [Songs with danceability above .5 appear to have amassed more streams.]
 
 ```{r}
-new_spotify_youtube %>%
-  group_by(artist) %>%
- arrange(desc(stream)) %>%
-  head(1)
+ ggplot(data = new_spotify_youtube) + 
+  geom_point(mapping = aes(x = stream, y = danceability))
 ```
-
-```{r}
-new_spotify_youtube %>%
-  group_by(artist) %>%
- arrange(stream) %>%
-  head(1)
-```
-
 
 
 ### Question 3
