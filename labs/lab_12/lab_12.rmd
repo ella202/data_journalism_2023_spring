@@ -1,0 +1,82 @@
+---
+title: "lab_12"
+author: "derek willis"
+date: "2023-05-02"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## You will need
+
+* tidytext and our usual libraries
+
+## Load libraries and establish settings
+
+```{r}
+library(tidyverse)
+library(tidytext)
+library(janitor)
+library(lubridate)
+library(rvest)
+```
+
+**Task** Create a codeblock and load appropriate packages and settings for this lab.
+
+```{r}
+sanctions <- read_csv("data/md_attorney_sanctions.csv")
+```
+
+## Questions
+
+**Q1.** You've been assigned to report a story about the leading reasons that Maryland attorneys get sanctioned by the state for misconduct. The state [publishes lists of sanctions](https://www.courts.state.md.us/attygrievance/sanctions) that contain a short text description about the situation. Load the CSV file in the data folder containing records from fiscal year 2011 onwards. Make a list of unique words from the text column, then following the example in the pre_lab, remove common "stop words" from that list and create a list of the top 10 words containing the percentage of occurrences each word represents. What's the leading word in that answer and, broadly, what do you think the top 10 words describe?
+
+**A1.** The top word "failing" appears almost 5 percent of the time. Overall, the top 10 words pertain to the context of sanctions in that they involve the law, so words like "client," "attorney" and "respondent" are a few of the top words and that makes sense considering the context. 
+
+```{r}
+unique_words <- sanctions %>% select(text) %>%
+  unnest_tokens(word, text)
+```
+
+```{r}
+unique_words %>%
+ anti_join(stop_words) %>%
+  group_by(word) %>%
+  tally(sort=TRUE) %>%
+  mutate(percent = (n/sum(n))*100) %>%
+  top_n(50)
+```
+
+**Q2.** Let's move beyond single words to phrases. Make a list of the top 10 three-word phrases, called trigrams, based on the example from the pre_lab (you'll need to modify the example code to do this). What's the top trigram and how often does it appear? What does that phrase mean in legal terms?
+
+**A2.** The top trigram is "attorney trust account," with 343 mentions. It's an amount of money the attorney may hold in a separate account.
+
+```{r}
+
+sanctions %>%
+ unnest_tokens(trigram, text, token = "ngrams", n = 3) %>%
+  separate(trigram, c("word1", "word2", "word3"), sep = " ") %>%
+  filter(!word1 %in% stop_words$word) %>%
+  filter(!word2 %in% stop_words$word) %>%
+  filter(!word3 %in% stop_words$word) %>%
+  mutate(trigram = paste(word1, word2, word3, sep = " ")) %>%
+  group_by(trigram) %>%
+  tally(sort=TRUE) %>%
+  mutate(percent = (n/sum(n))*100) %>%
+  top_n(10)
+```
+
+**Q3.** Let's drop back down to more traditional text analysis - take the top trigram from Q2 and write code to see how many times it occurs in the text column in each fiscal year. What do you think the answer produced by your code suggests? What else could you do to try and clarify the most important reasons attorneys get sanctioned?
+
+**A3.** My results suggest dozens of sanctions were distributed/ordered in 2021 in relation to attorneys holding client funds in individual accounts. You can clarify the most important reasons attorneys get sanctioned by going into these these sanction reports and gathering information the lawyers involved and understanding exactly what they did involving "attorney trust accounts." Basically just going into further detail about how attorneys may have abused this.
+
+```{r}
+sanctions %>%
+   filter(str_detect(text, 'attorney trust account'))%>%
+  group_by(fiscal_year) %>%
+  summarise(count = n())%>%
+  arrange(desc(count))
+
+```
