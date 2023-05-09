@@ -60,7 +60,7 @@ ggplot(data = low_tempo) +
 ### Question 2
 
 * **Question text**:[Is there correlation between danceability of songs and their number of streams? 
-* **Analysis summary**: [Songs with danceability above .5 appear to have amassed more streams.]
+* **Analysis summary**: [Songs with danceability above .5 appear to have amassed more streams. I think we should change "correlation" to relationship. ]
 
 ```{r}
  ggplot(data = new_spotify_youtube) + 
@@ -71,15 +71,44 @@ ggplot(data = low_tempo) +
 ### Question 3
 
 * **Question text**: [What album type makes up the top most popular songs?]
-* **Analysis summary**: []
+* **Analysis summary**: [The top 20 most streamed songs are a part of albums with over 70 percent. Even when we expand the number of popular songs we're sampling from, most of them still appear to be a part of albums over compilations and singles.]
+
+```{r}
+top_20_stream <- new_spotify_youtube %>%
+  arrange(desc(stream)) %>%
+  head(20)
+
+count_album_type <- top_20_stream %>%
+  count(album_type)
+
+count_album_type_all <- new_spotify_youtube %>%
+  count(album_type)
+
+percent_album_type_all <- count_album_type_all %>%
+  mutate(percent = n / sum(n) * 100)
+```
 
 
 ### Question 4
 
 * **Question text**: [Do instrumental tracks have a higher or lower average tempo than vocal tracks?]
-* **Analysis summary**: []
+* **Analysis summary**: [Austin helped me realize this question is a bit harder to analyze than I thought. It's hard to narrow down what constitutes a completely instrumental track even with the data we have. We'll probably have to rework this. ]
+
+```{r}
+instrumental_tracks <- new_spotify_youtube %>%
+  filter(instrumentalness == 1)
+```
 
 ### Question 5
 
 * **Question text**: [What’s the danceability score of songs with high speechiness?]
-* **Analysis summary**: []
+* **Analysis summary**: [Danceability was higher in songs with high speechiness. Instead of using the top 20 or the entire dataframe, maybe we should have maybe analyzed all the songs with above average speechiness so that we have a larger sample size.]
+```{r}
+top_20_speechiness <- new_spotify_youtube %>%
+  arrange(desc(speechiness)) %>%
+  head(20)
+
+avg_danceability_top_20 <- mean(top_20_speechiness$danceability)
+
+avg_danceability_all <- mean(new_spotify_youtube$danceability)
+```
