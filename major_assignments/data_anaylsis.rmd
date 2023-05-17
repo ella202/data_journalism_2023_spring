@@ -7,6 +7,7 @@ output: html_notebook
 library(tidyverse)
 library(dplyr)
 library(janitor)
+library(corrr)
 ```
 
 ```{r}
@@ -30,11 +31,11 @@ clean_names()
 new_spotify_youtube <- clean_spotify_youtube %>%
   na.omit(datacollected) 
 ```
-
+For Q1+Q2: filter for outliars and figure out correlation using library(corrr)
 ### Question 1
 
 **Question text** [Is there a difference in listenership between faster tempo and lower tempo songs?]
-* **Analysis summary**: [It looks like there are a lot more songs above the average tempo in the dataframe — 120.6 BPM.I also noticed there's a concentration of more streams near the average and around a tempo of 175 BPM.  ]
+* **Analysis summary**: [It looks like there are a lot more songs above the average tempo in the dataframe — 120.6 BPM.I also noticed there's a concentration of more streams near the average and around a tempo of 175 BPM. There are 17 songs with unusually low tempos (equal to zero), after filtering them more than half of them were various white noise and sleep music tracks. There were two songs with unusually high tempo (above 225), I noticed that they had a low number of streams. It turns out there is no relationship or correlation between tempo and the number of streams or listenership of a track according to the data.  ]
 
 ```{r}
 new_spotify_youtube %>%
@@ -55,22 +56,55 @@ filter(tempo < 120.6072 )
 ggplot(data = low_tempo) + 
   geom_point(mapping = aes(x = stream, y = tempo))
 ```
+#filtering for outliers
 
+```{r}
+low_tempo_outlier <- low_tempo %>%
+filter(tempo < 10 )
+```
+
+```{r}
+high_tempo_outlier <- high_tempo %>%
+  filter(tempo > 225)
+```
+
+#correlation!
+
+```{r}
+new_spotify_youtube %>%
+  select(-artist, -url_spotify, -track, -album, -album_type, -uri, -url_youtube, -title, -channel, -description, -licensed, -official_video) %>%
+  correlate() %>%
+  select(term, stream )
+```
 
 ### Question 2
 
 * **Question text**:[Is there correlation between danceability of songs and their number of streams? 
-* **Analysis summary**: [Songs with danceability above .5 appear to have amassed more streams. I think we should change "correlation" to relationship. ]
+* **Analysis summary**: [Songs with danceability above .5 appear to have amassed a lot of streams compared to those below. There were outlier tracks with extremely high number of streams (over three billion) and higher danceability. Even with the dot plot there is no correlation between a song's danceability and its number of streams.]
 
 ```{r}
  ggplot(data = new_spotify_youtube) + 
   geom_point(mapping = aes(x = stream, y = danceability))
 ```
+#filtering for outliers
+```{r}
+new_spotify_youtube %>%
+  filter(stream > 3e+09)
+```
+
+
+#correlation!
+```{r}
+new_spotify_youtube %>%
+  select(-artist, -url_spotify, -track, -album, -album_type, -uri, -url_youtube, -title, -channel, -description, -licensed, -official_video) %>%
+  correlate() %>%
+  select(term, stream )
+```
 
 
 ### Question 3
 
-* **Question text**: [What album type makes up the top most popular songs?]
+* **Question text**: [What album type makes up the top most popular songs?] 
 * **Analysis summary**: [The top 20 most streamed songs are a part of albums with over 70 percent. Even when we expand the number of popular songs we're sampling from, most of them still appear to be a part of albums over compilations and singles.]
 
 ```{r}
